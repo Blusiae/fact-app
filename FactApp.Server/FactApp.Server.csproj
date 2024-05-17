@@ -7,7 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.5" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FactApp.Client\FactApp.Client.csproj" />
+    <ProjectReference Include="..\FactApp.Shared\FactApp.Shared.csproj" />
   </ItemGroup>
 
 </Project>
