@@ -8,7 +8,7 @@ namespace FactApp.Server.Controllers
     [ApiController]
     public class FactController(HttpClient http) : ControllerBase
     {
-        [HttpGet("/fact")]
+        [HttpGet]
         public async Task<ActionResult<FactDto>> GetFact()
         {
             var response = await http.GetAsync("https://catfact.ninja/fact");

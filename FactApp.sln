@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34902.65
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactApp.Server", "FactApp.Server\FactApp.Server.csproj", "{B1306C3A-1DAC-434A-92F3-5A241474DCDF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FactApp.Server", "FactApp.Server\FactApp.Server.csproj", "{B1306C3A-1DAC-434A-92F3-5A241474DCDF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactApp.Shared", "FactApp.Shared\FactApp.Shared.csproj", "{5D4D61A8-BCBB-4BB1-A0F3-0666274D4468}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FactApp.Shared", "FactApp.Shared\FactApp.Shared.csproj", "{5D4D61A8-BCBB-4BB1-A0F3-0666274D4468}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactApp.Client", "FactApp.Client\FactApp.Client.csproj", "{E6A1A81B-3C52-47CF-8B8E-9DFFCBA55A38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FactApp.Client", "FactApp.Client\FactApp.Client.csproj", "{E6A1A81B-3C52-47CF-8B8E-9DFFCBA55A38}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
