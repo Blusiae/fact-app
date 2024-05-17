@@ -1,0 +1,6 @@
+@FactApp.Server_HostAddress = http://localhost:5022
+
+GET {{FactApp.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
