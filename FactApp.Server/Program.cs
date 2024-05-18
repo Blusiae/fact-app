@@ -1,3 +1,5 @@
+using FactApp.Server.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -9,6 +11,9 @@ builder.Services.AddRazorPages();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddHttpClient();
+
+builder.Services.AddTransient<IFileService, FileService>();
+builder.Services.AddTransient<IFactService, FactService>();
 
 var app = builder.Build();
 
