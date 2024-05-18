@@ -15,5 +15,18 @@ namespace FactApp.Server.Services
             await _fileService.SaveToFile("facts.txt", fact);
             return fact;
         }
+
+        public async Task<List<FactDto>> GetFacts(int count, int offset)
+        {
+            var lines = await _fileService.GetLines(count, offset);
+
+            var facts = lines.Select(l =>
+            {
+                var splittedLine = l.Split(";?;");
+                return new FactDto { Fact = splittedLine[0], Length = int.Parse(splittedLine[1]) };
+            }).ToList();
+
+            return facts;
+        }
     }
 }

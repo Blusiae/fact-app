@@ -3,7 +3,8 @@
 
 <MudDataGrid ServerData="LoadGridData" T="FactDto" @ref="_dataGrid" Class="ma-15">
     <Columns>
-        <PropertyColumn Property="@(f => f.Fact)" Title="Facts" />
+        <PropertyColumn Property="@(f => f.Fact)" Title="Fact" />
+        <PropertyColumn Property="@(f => f.Length)" Title="Length" />
     </Columns>
     <PagerContent>
         <MudDataGridPager T="FactDto" />

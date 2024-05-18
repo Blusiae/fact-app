@@ -22,9 +22,7 @@ namespace FactApp.Server.Controllers
         [HttpGet]
         public async Task<ActionResult<List<string>>> GetFacts([FromQuery]int count, [FromQuery]int offset)
         {
-            var lines = await _fileService.GetLines(count, offset);
-
-            var facts = lines.Select(l => new FactDto { Fact = l }).ToList();
+            var facts = await _factService.GetFacts(count, offset);
 
             if (facts is null)
                 return NotFound();
