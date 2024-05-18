@@ -13,6 +13,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddHttpClient();
 
 builder.Services.AddTransient<IFileService, FileService>();
+builder.Services.AddTransient<IFactService, FactService>();
 
 var app = builder.Build();
 

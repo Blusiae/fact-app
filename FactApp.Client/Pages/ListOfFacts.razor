@@ -1,0 +1,42 @@
+﻿@page "/list-of-facts"
+@inject IFactService _factService
+
+<MudDataGrid ServerData="LoadGridData" T="FactDto" @ref="_dataGrid" Class="ma-15">
+    <Columns>
+        <PropertyColumn Property="@(f => f.Fact)" Title="Facts" />
+    </Columns>
+    <PagerContent>
+        <MudDataGridPager T="FactDto" />
+    </PagerContent>
+</MudDataGrid>
+
+@code {
+    private MudDataGrid<FactDto> _dataGrid = new();
+
+    private async Task<List<FactDto>> GetFacts(int pageSize, int currentPage)
+    {
+        return await _factService.GetFacts(pageSize, pageSize*currentPage);
+    }
+
+    private async Task<int> GetFactsCount()
+    {
+        return await _factService.GetFactsCount();
+    }
+
+    private async Task<GridData<FactDto>> LoadGridData(GridState<FactDto> state)
+    {
+        var currentPage = state.Page;
+        var pageSize = state.PageSize;
+
+        var facts = await GetFacts(pageSize, currentPage);
+        var factsCount = await GetFactsCount();
+
+        GridData<FactDto> data = new()
+            {
+                Items = facts,
+                TotalItems = factsCount
+            };
+
+        return data;
+    }
+}
