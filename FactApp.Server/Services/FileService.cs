@@ -11,7 +11,7 @@ namespace FactApp.Server.Services
             using FileStream fs = File.Open($"{_path}/{fileName}", FileMode.Append);
             using StreamWriter sw = new(fs);
 
-            await sw.WriteLineAsync($"{fact.Fact};?; {fact.Length}");
+            await sw.WriteLineAsync($"{fact.Fact};?;{fact.Length}");
         }
 
         public async Task<List<string>> GetLines(int count, int offset)
