@@ -8,7 +8,7 @@ namespace FactApp.Server.Controllers
     [ApiController]
     public class FactController(IFactService _factService, IFileService _fileService) : ControllerBase
     {
-        [HttpGet("/api/[controller]/new")]
+        [HttpGet("new")]
         public async Task<ActionResult<FactDto>> GetFact()
         {
             var fact = await _factService.GetFact();
@@ -30,7 +30,7 @@ namespace FactApp.Server.Controllers
             return Ok(facts);
         }
 
-        [HttpGet("/api/[controller]/count")]
+        [HttpGet("count")]
         public ActionResult<int> GetFactsCount()
         {
             return _fileService.GetLinesCount();
