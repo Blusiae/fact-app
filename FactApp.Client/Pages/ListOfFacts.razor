@@ -1,7 +1,7 @@
 ﻿@page "/list-of-facts"
 @inject IFactService _factService
 
-<MudDataGrid ServerData="LoadGridData" T="FactDto" @ref="_dataGrid" Class="ma-15">
+<MudDataGrid ServerData="LoadGridData" T="FactDto" @ref="_dataGrid" Class="ma-15" SortMode="SortMode.None">
     <Columns>
         <PropertyColumn Property="@(f => f.Fact)" Title="Fact" />
         <PropertyColumn Property="@(f => f.Length)" Title="Length" />
